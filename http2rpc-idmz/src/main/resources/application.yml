@@ -1,0 +1,89 @@
+server:
+  port: "21201"
+
+usn:
+  rpc:
+    kafkaredis:
+      namespace:
+        dmz:
+          redis:
+            host: redis.dmz.dr
+            port: 6379
+          producer:
+            timeout: 60000
+            max-request-size: 26214400
+            kafka:
+              bootstrap-servers: kafka.dmz.dr:9092
+    router:
+      def:
+        destination: KAFKA_REDIS
+
+management:
+  security:
+    enabled: false
+    sessions: never
+  add-application-context-header: false
+  endpoint:
+    metrics:
+      enabled: true
+    prometheus:
+      enabled: true
+  endpoints:
+    web:
+      exposure:
+        include: health,metrics,info,prometheus,loggers
+  metrics:
+    export:
+      prometheus:
+        enabled: true
+  server:
+    port: 21202
+
+endpoints:
+  jmx:
+    enabled: false
+  metrics:
+    enabled: true
+  prometheus:
+    enabled: true
+  trace:
+    enabled: false
+
+spring:
+  jmx:
+    enabled: false
+  codec:
+    max-in-memory-size: 20MB
+
+logging:
+  level:
+    org:
+      springframework:
+        beans:
+          factory:
+            annotation:
+              AutowiredAnnotationBeanPostProcessor: WARN
+        boot:
+          actuate:
+            endpoint:
+              mvc:
+                EndpointHandlerMapping: WARN
+          context:
+            properties:
+              ConfigurationPropertiesBindingPostProcessor: ERROR
+        context:
+          annotation:
+            AnnotationConfigApplicationContext: WARN
+          support:
+            PostProcessorRegistrationDelegate: WARN
+        web:
+          reactive:
+            result:
+              method:
+                annotation:
+                  RequestMappingHandlerMapping: WARN
+          servlet:
+            mvc:
+              method:
+                annotation: WARN
+    springfox: ERROR

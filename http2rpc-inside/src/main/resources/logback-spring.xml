@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+    <if condition='isDefined("STM_JSON_LOGGER")'>
+        <then>
+            <logger name="ru.stm.dr" level="INFO"/>
+
+            <!-- Log JSON parse errors. For some reasons they log errors with DEBUG
+                level in ServletInvocableHandlerMethod class -->
+            <logger
+                    name="org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod"
+                    level="DEBUG"/>
+            <logger name="org.springframework.web" level="INFO"/>
+
+            <appender name="jsonConsoleAppender" class="ch.qos.logback.core.ConsoleAppender">
+                <encoder class="net.logstash.logback.encoder.LogstashEncoder">
+                    <!-- limit logging class length to prevent very long strings in logtrail-->
+                    <shortenedLoggerNameLength>35</shortenedLoggerNameLength>
+                </encoder>
+            </appender>
+            <root level="INFO">
+                <appender-ref ref="jsonConsoleAppender"/>
+            </root>
+        </then>
+        <else>
+            <include resource="org/springframework/boot/logging/logback/base.xml"/>
+            <logger name="ru.stm.stm" level="DEBUG"/>
+
+            <!-- Log JSON parse errors. For some reasons they log errors with DEBUG
+                level in ServletInvocableHandlerMethod class -->
+            <logger
+                    name="org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod"
+                    level="DEBUG"/>
+            <logger name="org.springframework.web" level="INFO"/>
+        </else>
+    </if>
+</configuration>
