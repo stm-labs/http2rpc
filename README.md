@@ -1,5 +1,23 @@
-# Универсальный HTTP прокси через RPC
+# Universal HTTP Proxy over STM Labs RPC
 
-Предполагается, что пара dmz/inside будет развертываться на каждое соединение.
-Контролироваться, чтобы сообщения не пересекались (в кафка топике RPC) - через разные топики: задается в helm systemCode (для dmz/inside)
-Для Inside так же указать куда проксировать
+## General information
+
+*Branches*:
+ - main - latest stable release
+ - develop - active development branch (next release)
+ - release/** - maintenance branches 
+
+## Use in your project
+
+//TODO @dbondin
+
+## Environment variable to setup
+
+//TODO @dbondin
+
+
+## Some details
+It is assumed that new service instance deploys for every new connection.
+Don't forgot to set up unique `systemCode` for every deployment. System code uses as name of kafka topic.
+
+(c) 2021 STM Labs
