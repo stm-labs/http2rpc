@@ -11,11 +11,23 @@
     <description>STM HTTP2RPC</description>
     <packaging>pom</packaging>
 
+    <distributionManagement>
+        <snapshotRepository>
+            <id>ossrh</id>
+            <url>https://oss.sonatype.org/content/repositories/snapshots</url>
+        </snapshotRepository>
+        <repository>
+            <id>ossrh</id>
+            <url>https://oss.sonatype.org/content/repositories/releases</url>
+        </repository>
+    </distributionManagement>
+
     <modules>
         <module>http2rpc-parent</module>
         <module>http2rpc-inside</module>
         <module>http2rpc-idmz</module>
         <module>http2rpc-inside-api</module>
     </modules>
+
 
 </project>
