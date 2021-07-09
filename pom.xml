@@ -5,11 +5,17 @@
 
     <groupId>ru.stm-labs.http2rpc</groupId>
     <version>1.1.0</version>
-    <artifactId>group</artifactId>
+    <artifactId>http2rpc-group</artifactId>
 
     <name>http2rpc-group</name>
     <description>STM HTTP2RPC</description>
     <packaging>pom</packaging>
+
+    <scm>
+        <connection>scm:git:git://github.com/stm-labs/http2rpc</connection>
+        <developerConnection>scm:git:ssh://github.com:stm-labs/http2rpc</developerConnection>
+        <url>https://github.com/stm-labs/http2rpc</url>
+    </scm>
 
     <distributionManagement>
         <snapshotRepository>

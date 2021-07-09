@@ -20,9 +20,9 @@
     </licenses>
 
     <scm>
-        <connection>scm:git:git://github.com/stm-labs/stm-rpc</connection>
-        <developerConnection>scm:git:ssh://github.com:stm-labs/stm-rpc</developerConnection>
-        <url>https://github.com/stm-labs/stm-rpc</url>
+        <connection>scm:git:git://github.com/stm-labs/http2rpc</connection>
+        <developerConnection>scm:git:ssh://github.com:stm-labs/http2rpc</developerConnection>
+        <url>https://github.com/stm-labs/http2rpc</url>
     </scm>
 
     <developers>
