@@ -5,9 +5,9 @@ name: Java CI with Maven and deploy to Maven Central
 
 on:
   push:
-    branches: [ main, release/* ]
+    branches: [ main, develop, release/* ]
   pull_request:
-    branches: [ main, release/* ]
+    branches: [ main, develop, release/* ]
 
 jobs:
   build:
