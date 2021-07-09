@@ -42,7 +42,6 @@
                 <version>${spring.boot.version}</version>
                 <configuration>
                     <mainClass>ru.stm.http2rpc.dmz.Http2RpcApplicationDmz</mainClass>
-
                     <excludes>
                         <exclude>
                             <groupId>org.projectlombok</groupId>
